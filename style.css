@@ -22,6 +22,11 @@ body {
  animation-delay: 1s;
 }
 
+.glow-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .glow-btn {
   -webkit-tap-highlight-color: transparent;
 }
@@ -73,3 +78,8 @@ body {
  padding: 8px;
  box-shadow: 0 0 15px #ff00cc;
 }
+
+.glow-btn {
+  user-select: none;
+}
+
