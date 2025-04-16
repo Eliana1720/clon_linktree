@@ -11,7 +11,6 @@ Un proyecto simple y vistoso de Linktree personalizado con estilo **neón futuri
 - 💖 Paleta de colores fucsia, cian y negro espacial.
 - ✨ Botones con efecto `glow` animado al pasar el mouse.
 - 📱 Responsive y optimizado para celulares.
-- 🔒 Previene que queden seleccionados los botones al volver desde links externos.
 - ⚡ Sin frameworks, rápido y liviano.
 - 🎨 Fácilmente personalizable.
 
