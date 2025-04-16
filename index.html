@@ -73,24 +73,35 @@
 
  <p class="mt-10 text-gray-400 text-sm"> Copyright © 2025 ValkitaMR</p>
 
-<script>
+<!-- Script -->
+ <script>
   lucide.createIcons();
 
-  document.querySelectorAll('.link-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const url = this.getAttribute('href');
-      
-      // Abre el enlace en una nueva pestaña
-      window.open(url, '_blank');
-      
-      // Refresca la página actual después de un breve retraso
-      setTimeout(() => {
-        location.reload();
-      }, 100);
-    });
+  // Verificar si necesitamos recargar al volver atrás
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted || performance.navigation.type === 2) {
+      location.reload();
+    }
   });
-</script>
+
+  document.querySelectorAll('.link-btn').forEach(btn => {
+   btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const url = this.getAttribute('href');
+    
+    // Marcar que necesitamos recargar cuando volvamos
+    sessionStorage.setItem('shouldReload', 'true');
+    
+    // Abrir enlace en nueva pestaña
+    window.open(url, '_blank');
+    
+    // Recargar después de un pequeño retraso
+    setTimeout(() => {
+      location.reload();
+    }, 100);
+   });
+  });
+ </script>
 
 </body>
 
