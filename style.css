@@ -22,6 +22,10 @@ body {
  animation-delay: 1s;
 }
 
+.glow-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .led-line:nth-child(3) {
  left: 60%;
  animation-delay: 2s;
