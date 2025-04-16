@@ -50,7 +50,7 @@
    <i data-lucide="twitch" class="w-5 h-5"></i> TWITCH
   </a>
 
-  <a href="https://www.tiktok.com/@camisist?_t=ZM-8vaZuSlIseU&_r=1" target="_blank"
+  <a href="https://www.tiktok.com/@camisist?" target="_blank"
    class="glow-btn flex items-center justify-center gap-3 text-lg font-bold py-3 px-6 rounded-xl shadow-lg text-white hover:text-cyan-400 transform hover:scale-105 transition-transform duration-300">
    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 256 256" fill="currentColor">
     <path
@@ -73,16 +73,24 @@
 
  <p class="mt-10 text-gray-400 text-sm"> Copyright © 2025 ValkitaMR</p>
 
- <script>
+<script>
   lucide.createIcons();
-  
-  document.addEventListener("visibilitychange", function () {
-  if (document.visibilityState === "visible") {
-    document.activeElement?.blur();
-  }
-});
 
- </script>
+  document.querySelectorAll('.link-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = this.getAttribute('href');
+      
+      // Abre el enlace en una nueva pestaña
+      window.open(url, '_blank');
+      
+      // Refresca la página actual después de un breve retraso
+      setTimeout(() => {
+        location.reload();
+      }, 100);
+    });
+  });
+</script>
 
 </body>
 
